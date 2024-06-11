@@ -9,6 +9,7 @@
 import UIKit
 
 /// Generates iOS Device vibrations by UIFeedbackGenerator.
+@MainActor
 open class TapticEngine {
 
     public static let impact: Impact = Impact()
@@ -17,6 +18,7 @@ open class TapticEngine {
 
 
     /// Wrapper of `UIImpactFeedbackGenerator`
+    @MainActor
     open class Impact {
 
         /// Impact feedback styles
@@ -24,7 +26,7 @@ open class TapticEngine {
         /// - light: A impact feedback between small, light user interface elements.
         /// - medium: A impact feedback between moderately sized user interface elements.
         /// - heavy: A impact feedback between large, heavy user interface elements.
-        public enum ImpactStyle {
+        public enum ImpactStyle: Sendable {
             case light, medium, heavy
         }
 
@@ -78,6 +80,7 @@ open class TapticEngine {
 
 
     /// Wrapper of `UISelectionFeedbackGenerator`
+    @MainActor
     open class Selection {
 
         private var generator: Any? = {
@@ -106,6 +109,7 @@ open class TapticEngine {
 
 
     /// Wrapper of `UINotificationFeedbackGenerator`
+    @MainActor
     open class Notification {
 
         /// Notification feedback types

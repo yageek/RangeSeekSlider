@@ -6,8 +6,7 @@
 //
 //
 
-import UIKit
-
+@preconcurrency import UIKit
 @IBDesignable open class RangeSeekSlider: UIControl {
 
     // MARK: - initializers
@@ -257,7 +256,7 @@ import UIKit
         element.accessibilityHint = minLabelAccessibilityHint
         element.accessibilityValue = minLabel.string as? String
         element.accessibilityFrame = convert(leftHandle.frame, to: nil)
-        element.accessibilityTraits = UIAccessibilityTraits.adjustable
+        element.accessibilityTraits = .adjustable
         return element
     }
 
@@ -268,7 +267,7 @@ import UIKit
         element.accessibilityHint = maxLabelAccessibilityHint
         element.accessibilityValue = maxLabel.string as? String
         element.accessibilityFrame = convert(rightHandle.frame, to: nil)
-        element.accessibilityTraits = UIAccessibilityTraits.adjustable
+        element.accessibilityTraits = .adjustable
         return element
     }
 

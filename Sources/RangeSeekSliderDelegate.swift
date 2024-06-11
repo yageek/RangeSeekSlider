@@ -7,8 +7,8 @@
 //
 
 import CoreGraphics
-
-public protocol RangeSeekSliderDelegate: class {
+@MainActor
+public protocol RangeSeekSliderDelegate: AnyObject {
 
     /// Called when the RangeSeekSlider values are changed
     ///
